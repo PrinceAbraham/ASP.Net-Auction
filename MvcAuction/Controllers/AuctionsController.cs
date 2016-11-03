@@ -27,9 +27,7 @@ namespace MvcAuction.Controllers
                 CurrentPrice = null
             };
 
-            ViewData["Auction"] = auction;
-
-            return View();
+            return View(auction);
         }
 
     }
