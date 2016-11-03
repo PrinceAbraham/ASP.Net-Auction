@@ -15,6 +15,11 @@ namespace MvcAuction.Controllers
         {
             return View();
         }
+        public ActionResult TempDataDemo()
+        {
+            TempData["SuccessMessage"] = "The action succeeded!";
+            return RedirectToAction("Index");
+        }
         public ActionResult Auction()
         {
             var auction = new MvcAuction.Models.Auction()

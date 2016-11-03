@@ -4,3 +4,8 @@
 @* Code Block ^ *@ 
 
 <h2>Index</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="success-message"> @TempData["SuccessMessage"]</div>
+}
