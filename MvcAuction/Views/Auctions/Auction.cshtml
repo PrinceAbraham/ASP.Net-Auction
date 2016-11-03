@@ -1,0 +1,40 @@
+﻿@{
+    var auction = new MvcAuction.Models.Auction()
+    {
+        Title = "Example Auction",
+        Description = "This is an Example Auction",
+        StartTime = DateTime.Now,
+        EndTime = DateTime.Now.AddDays(7),
+        StartPrice = 1.00m,
+        CurrentPrice = null
+    };
+}
+
+<div>
+    <h3>@auction.Title</h3>
+    
+    <div class="details">
+        <p>Start Time: @auction.StartTime.ToString("g")</p>
+        <p>End Time: @auction.EndTime</p>
+        <p>Start Price: @auction.StartPrice.ToString("C")</p>
+    </div>
+
+</div>
+<p>
+    Current Price:
+    @if (auction.CurrentPrice == null)
+    {
+        @: [No bids]
+    }
+    else
+    {
+        <span>@auction.CurrentPrice.Value.ToString("C")</span>
+    }
+</p>
+@if (auction.ImageUrl != null) 
+{
+    <img src="@auction.ImageUrl" title="@auction.Title" />
+}
+<div class="description">
+    @auction.Description
+</div>

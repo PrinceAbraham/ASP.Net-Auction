@@ -15,6 +15,10 @@ namespace MvcAuction.Controllers
         {
             return View();
         }
+        public ActionResult Auction()
+        {
+            return View();
+        }
 
     }
 }
