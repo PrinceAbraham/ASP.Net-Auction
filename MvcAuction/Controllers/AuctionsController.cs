@@ -17,6 +17,18 @@ namespace MvcAuction.Controllers
         }
         public ActionResult Auction()
         {
+            var auction = new MvcAuction.Models.Auction()
+            {
+                Title = "Example Auction",
+                Description = "This is an Example Auction",
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now.AddDays(7),
+                StartPrice = 1.00m,
+                CurrentPrice = null
+            };
+
+            ViewData["Auction"] = auction;
+
             return View();
         }
 
