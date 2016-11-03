@@ -307,8 +307,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Auctions\Index.cshtml" />
     <Content Include="Views\Auctions\Auction.cshtml" />
+    <Content Include="Views\Auctions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
