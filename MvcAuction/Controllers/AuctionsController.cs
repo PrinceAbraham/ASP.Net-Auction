@@ -64,12 +64,24 @@ namespace MvcAuction.Controllers
             return View(auction);
         }
 
-        public ActionResult Create([Bind (Exclude="CurrentPrice")] Models.Auction auction)
+        //So that you can differentiate the Create methods
+        [HttpGet]
+        public ActionResult Create()
         {
             var categoryList = new SelectList(new[] { "Automotive", "Electronics", "Games", "Home" });
             ViewBag.CategoryList = categoryList;
-            
+
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create([Bind (Exclude="CurrentPrice")] Models.Auction auction)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            return Create();
         }
 
     }
