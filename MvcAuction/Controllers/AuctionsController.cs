@@ -49,7 +49,7 @@ namespace MvcAuction.Controllers
             TempData["SuccessMessage"] = "The action succeeded!";
             return RedirectToAction("Index");
         }
-        public ActionResult Auction()
+        public ActionResult Auction(long id)
         {
             var auction = new MvcAuction.Models.Auction()
             {
@@ -64,10 +64,11 @@ namespace MvcAuction.Controllers
             return View(auction);
         }
 
-        public ActionResult Create()
+        public ActionResult Create([Bind (Exclude="CurrentPrice")] Models.Auction auction)
         {
             var categoryList = new SelectList(new[] { "Automotive", "Electronics", "Games", "Home" });
             ViewBag.CategoryList = categoryList;
+            
             return View();
         }
 
